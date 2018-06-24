@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="easyLuaLib.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="network\async.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="service\context.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="network\poll.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\idle.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\loop.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\networkEntry.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\prepare.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\timer.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="network\handle.cpp">
+      <Filter>network</Filter>
+    </ClCompile>
+    <ClCompile Include="service\lua.c">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="service\handleManager.h">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="service\serviceEntry.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="service\serviceInfo.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="socket\socketUtil.cpp">
+      <Filter>socket</Filter>
+    </ClCompile>
+    <ClCompile Include="socket\socketEntry.cpp">
+      <Filter>socket</Filter>
+    </ClCompile>
+    <ClCompile Include="socket\socketmodule.cpp">
+      <Filter>socket</Filter>
+    </ClCompile>
+    <ClCompile Include="service\thisVM.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="service\testHandleManager.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="service\lua-seri.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dtorCallback.h" />
+    <ClInclude Include="register.h" />
+    <ClInclude Include="scopeGuard.h" />
+    <ClInclude Include="service\blockQueue.h" />
+    <ClInclude Include="singleton.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="network\loop.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="network\handle.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="service\context.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="service\serviceInfo.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="service\serviceUtil.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="socket\socketmodule.h">
+      <Filter>socket</Filter>
+    </ClInclude>
+    <ClInclude Include="network\watcher.h">
+      <Filter>network</Filter>
+    </ClInclude>
+    <ClInclude Include="service\lua-seri.h">
+      <Filter>service</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="network">
+      <UniqueIdentifier>{97dc78a4-4b76-489c-9b14-66ba489727c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="service">
+      <UniqueIdentifier>{7ed12c67-5829-4eab-93b9-499dd488b275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="socket">
+      <UniqueIdentifier>{ff01400b-9fef-4aa8-9081-4e24887485a4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+visual studio
+
+--------需要svn管理的---------
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+-------无需svn管理的-----------
+*.sdf
+*.suo
+*.vcxproj.user
+
+*.pdb
+*.obj

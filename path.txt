@@ -1,0 +1,35 @@
+﻿在easylua\start.bat脚本中写下: easylua\x64\Debug\lua5.3.4.exe easylua\test.lua
+bat目录,exe目录,第1个被启动的lua目录 这3个目录分别不同时.
+
+不考虑环境变量的情况下,不修改package.path 和 package.cpath情况下.
+package.path 和 package.cpath 这2个变量的值只受 解析器所在目录影响(即lua.exe)
+不受启动脚本(即*.bat) 和 第1个被启动的lua脚本(即*.lua)影响
+
+结论是,全部lua代码应该放在与解析器(即lua.exe)同一个目录
+
+测试发现,全部lua代码放在启动脚本(即*.bat)同一目录也行.估计是.\?.lua和.\?\init.lua在起作用.
+
+疑问:当启动脚本(即*.bat)目录和解析器(即lua.exe)目录放入同名的lua代码时 会有什么后果??
+测试结果,被require找到的是解析器(即lua.exe)目录的那个lua文件
+
+
+===============================
+以下是删了windows环境变量后,解析器在F:\easylua\x64\Debug\lua5.3.4.exe时打印结果
+
+-----package.path=
+
+F:\easylua\x64\Debug\lua\?.lua;
+F:\easylua\x64\Debug\lua\?\init.lua;
+F:\easylua\x64\Debug\?.lua;
+F:\easylua\x64\Debug\?\init.lua;
+F:\easylua\x64\Debug\..\share\lua\5.3\?.lua;
+F:\easylua\x64\Debug\..\share\lua\5.3\?\init.lua;
+.\?.lua;
+.\?\init.lua
+
+-----package.cpath=
+
+F:\easylua\x64\Debug\?.dll;
+F:\easylua\x64\Debug\..\lib\lua\5.3\?.dll;
+F:\easylua\x64\Debug\loadall.dll;
+.\?.dll
