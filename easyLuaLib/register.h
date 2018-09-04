@@ -5,7 +5,7 @@
 #include <mutex>
 
 //using namespace std;
-
+// 弱引用对象管理器.(对象生命周期不属这里管理)
 template<typename keyType,typename valueType>
 class Register:public virtual std::enable_shared_from_this<Register<keyType, valueType>>{
 public:

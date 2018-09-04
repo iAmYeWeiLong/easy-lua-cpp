@@ -136,7 +136,7 @@ static int sendByVmId(lua_State* L) {
 	return 1;
 }
 
-
+//通知其他服务,我可以接收消息了
 static int iAmReady(lua_State* L) {
 	auto const SELF = 1, THIS_CLASS = lua_upvalueindex(1);//[-0, +0, -]
 	auto self = (std::shared_ptr<cVmContext>**)lua_touserdata(L, SELF);

@@ -40,7 +40,7 @@ Message cVmContext::popMsg(){
 	if (this->msgQueue_.size() != 0) {
 		this->bIdle = false;
 		return this->msgQueue_.take();//因为上面判断过非空了,且只有一个消费者,绝对不会发生没有元素而陷入阻塞的情况	
-	}else {
+	}else {// context 中没有消息,去 service 上拿
 /*		auto p = this->service.lock();
 		assert(p);	*/	
 		Message msg = this->service->msgQueue.takeNonBlock();

@@ -33,11 +33,11 @@ static void splitString(const std::string& s, std::vector<std::string>& v, const
 	}
 }
 
-static void threadFunc(int argc, char **argv, void * key, void * waiter) {
+static void threadFunc(int argc, char **argv, void * waiterKey, void * waiter) {
 	for (int i = 0; i < argc; ++i) {
 		//printf("threadFunc  -- %d ,%s \n", i, argv[i]);
 	}
-	main(argc, argv, key, waiter);
+	main(argc, argv, waiterKey, waiter);
 	auto wt = (Waiter*)waiter;
 	wt->notify(0,0);//如果是因为异常退出,也能通知到等待者.如果已经调用过notify了,重复调用也不会有问题
 }
@@ -55,7 +55,8 @@ static int startService(lua_State* L) {
 		i++;
 	}
 	Waiter wt;
-	std::thread thread(threadFunc,static_cast<int>(args.size()), argv, main, &wt);
+	void * waiter_key = main;
+	std::thread thread(threadFunc,static_cast<int>(args.size()), argv, waiter_key, &wt);
 	thread.detach();
 
 	wt.wait();//阻塞在这里等待
